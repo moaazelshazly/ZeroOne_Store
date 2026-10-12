@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZEROONE — PlayStation Games Store</title>
+    <script>
+      // Redirect GitHub Pages 404 to root index with hash
+      var path = window.location.pathname;
+      var repo = path.split('/')[1] || '';
+      var target = window.location.origin + (repo ? '/' + repo : '') + '/#' + path.replace('/' + repo, '');
+      window.location.replace(target + window.location.search);
+    </script>
+  </head>
+  <body style="background-color: #0B0B10; color: #38BDF8; display: flex; align-items: center; justify-content: center; height: 100vh; font-family: sans-serif;">
+    <p>Redirecting to ZEROONE Store...</p>
+  </body>
+</html>
