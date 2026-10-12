@@ -1,7 +1,7 @@
 import type { Game } from '../types/game';
 
 // Store WhatsApp Contact Number (can be updated with your actual business number)
-export const DEFAULT_WHATSAPP_NUMBER = '+20 12 22253401';
+export const DEFAULT_WHATSAPP_NUMBER = '+20 10 10656775';
 
 /**
  * Generates a pre-filled WhatsApp ordering URL for a specific PlayStation game
