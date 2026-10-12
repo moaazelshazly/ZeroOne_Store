@@ -97,8 +97,11 @@ export function getCachedExternalGames(): Game[] {
  * Fetch games from FreeToGame API (No API Key required)
  */
 async function fetchFromFreeToGame(): Promise<Game[]> {
-  // Try proxy first (avoids CORS during dev), then fallback to direct URL
-  const endpoints = ['/api/freetogame/games', 'https://www.freetogame.com/api/games'];
+  // In dev environment, use Vite proxy; in production (GitHub Pages), call public API directly
+  const isDev = import.meta.env.DEV;
+  const endpoints = isDev
+    ? ['/api/freetogame/games', 'https://www.freetogame.com/api/games']
+    : ['https://www.freetogame.com/api/games', 'https://api.allorigins.win/raw?url=' + encodeURIComponent('https://www.freetogame.com/api/games')];
 
   let data: FreeToGameItem[] | null = null;
 

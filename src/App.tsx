@@ -61,7 +61,7 @@ function StorePage({ scrollToCatalogOnMount = false }: { scrollToCatalogOnMount?
       return GAMES;
     }
     if (sourceFilter === 'external-api') {
-      return externalGames.length > 0 ? externalGames : GAMES;
+      return externalGames;
     }
     return combinedGames;
   }, [sourceFilter, externalGames, combinedGames]);
