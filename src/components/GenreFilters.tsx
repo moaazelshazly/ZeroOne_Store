@@ -33,18 +33,21 @@ export const GenreFilters = ({
               key={genre}
               type="button"
               onClick={() => onSelectGenre(genre)}
-              className={`flex-shrink-0 inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer border ${
+              className={`flex-shrink-0 inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer border transform hover:scale-105 active:scale-95 ${
                 isSelected
-                  ? 'bg-gradient-to-r from-[#0284C7] to-[#38BDF8] text-white border-[#38BDF8] shadow-md shadow-[#38BDF8]/30 scale-[1.02]'
-                  : 'bg-[#15151D] text-[#A1A1AA] hover:text-[#F4F4F5] hover:bg-[#1E1E2A] border-[#262638] hover:border-[#3B3B52]'
+                  ? 'bg-gradient-to-r from-[#0284C7] via-[#0EA5E9] to-[#38BDF8] text-white border-[#38BDF8] shadow-lg shadow-[#38BDF8]/35 scale-[1.03] ring-1 ring-[#38BDF8]/50'
+                  : 'bg-[#15151D] text-[#A1A1AA] hover:text-[#F4F4F5] hover:bg-[#1E1E2A] border-[#262638] hover:border-[#38BDF8]/40 hover:shadow-sm'
               }`}
             >
+              {isSelected && (
+                <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+              )}
               <span>{genre}</span>
               {typeof count === 'number' && (
                 <span
                   className={`text-[10px] min-w-[1.25rem] text-center inline-block tabular-nums font-bold px-1.5 py-0.5 rounded-full transition-colors ${
                     isSelected
-                      ? 'bg-black/30 text-white'
+                      ? 'bg-black/35 text-white shadow-inner'
                       : 'bg-[#262638] text-[#A1A1AA]'
                   }`}
                 >

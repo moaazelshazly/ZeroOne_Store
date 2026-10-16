@@ -28,23 +28,24 @@ export const Navbar = ({
           <div className="flex items-center gap-3">
             <button
               onClick={onNavigateHome}
-              className="flex items-center gap-3 text-left group focus:outline-none"
+              className="flex items-center gap-3 text-left group focus:outline-none cursor-pointer"
               aria-label="Level Up Store Home"
             >
-              {/* Logo Emblem */}
-              <div className="relative w-10 h-10 rounded-xl overflow-hidden bg-[#15151D] border border-[#262638] flex items-center justify-center p-0.5 group-hover:border-[#38BDF8] transition-all duration-300 shadow-md">
+              {/* Logo Emblem with Animated Neon Halo */}
+              <div className="relative w-11 h-11 rounded-xl overflow-hidden bg-[#15151D] border border-[#262638] flex items-center justify-center p-0.5 group-hover:border-[#38BDF8] group-hover:shadow-[0_0_20px_rgba(56,189,248,0.5)] transition-all duration-300 shadow-md">
                 <img
-                  src="/TRY.jpg"
+                  src={`${import.meta.env.BASE_URL}TRY.jpg`}
                   alt="ZEROONE Emblem"
-                  width={40}
-                  height={40}
-                  className="w-full h-full object-cover rounded-lg"
+                  width={44}
+                  height={44}
+                  className="w-full h-full object-cover rounded-lg group-hover:scale-110 transition-transform duration-500"
                   onError={(e) => {
                     // Fallback to icon if logo image fails
                     (e.currentTarget as HTMLElement).style.display = 'none';
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-tr from-[#38BDF8]/20 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 rounded-xl border border-transparent group-hover:border-[#22D3EE]/60 transition-colors" />
               </div>
 
               {/* Brand Typography */}
@@ -53,7 +54,7 @@ export const Navbar = ({
                   <span className="font-black text-2xl tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-[#F4F4F5] via-[#38BDF8] to-[#22D3EE] group-hover:from-[#38BDF8] group-hover:to-[#22D3EE] transition-all">
                     ZEROONE
                   </span>
-                  <span className="text-[10px] uppercase font-bold tracking-widest px-1.5 py-0.5 rounded bg-[#22D3EE]/15 text-[#22D3EE] border border-[#22D3EE]/30">
+                  <span className="text-[10px] uppercase font-extrabold tracking-widest px-1.5 py-0.5 rounded bg-[#22D3EE]/15 text-[#22D3EE] border border-[#22D3EE]/30 group-hover:border-[#22D3EE] transition-colors">
                     PS
                   </span>
                 </div>
@@ -79,17 +80,17 @@ export const Navbar = ({
           <nav className="hidden md:flex items-center gap-2" aria-label="Main Navigation">
             <button
               onClick={onNavigateHome}
-              className="px-4 py-2 rounded-xl text-sm font-semibold text-[#F4F4F5] hover:text-white hover:bg-[#15151D] transition-all flex items-center gap-2 border border-transparent hover:border-[#262638]"
+              className="px-4 py-2 rounded-xl text-sm font-semibold text-[#F4F4F5] hover:text-white hover:bg-[#15151D] transition-all flex items-center gap-2 border border-transparent hover:border-[#262638] group cursor-pointer"
             >
-              <Compass className="w-4 h-4 text-[#22D3EE]" />
-              Home
+              <Compass className="w-4 h-4 text-[#22D3EE] group-hover:rotate-45 transition-transform duration-300" />
+              <span>Home</span>
             </button>
             <button
               onClick={onNavigateGames}
-              className="px-4 py-2 rounded-xl text-sm font-semibold text-[#F4F4F5] hover:text-white hover:bg-[#15151D] transition-all flex items-center gap-2 border border-transparent hover:border-[#262638]"
+              className="px-4 py-2 rounded-xl text-sm font-semibold text-[#F4F4F5] hover:text-white hover:bg-[#15151D] transition-all flex items-center gap-2 border border-transparent hover:border-[#262638] group cursor-pointer"
             >
-              <Gamepad2 className="w-4 h-4 text-[#38BDF8]" />
-              Games
+              <Gamepad2 className="w-4 h-4 text-[#38BDF8] group-hover:scale-125 transition-transform duration-300" />
+              <span>Games</span>
             </button>
           </nav>
 

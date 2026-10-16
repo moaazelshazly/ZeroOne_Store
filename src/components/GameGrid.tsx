@@ -271,8 +271,13 @@ export const GameGrid = ({
       ) : (
         /* Game Grid: Responsive 1 col mobile, 2 col sm, 3 col md, 4 col lg */
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {sortedGames.map((game) => (
-            <GameCard key={game.id} game={game} onSelectGame={onSelectGame} />
+          {sortedGames.map((game, idx) => (
+            <GameCard
+              key={`${game.id}-${selectedGenre}-${platformFilter}-${sortBy}`}
+              game={game}
+              onSelectGame={onSelectGame}
+              index={idx}
+            />
           ))}
         </div>
       )}

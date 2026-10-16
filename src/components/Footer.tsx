@@ -16,12 +16,12 @@ export const Footer = ({ onSelectGenre, onScrollToTop }: FooterProps) => {
           {/* Brand Column */}
           <div className="md:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl overflow-hidden bg-[#15151D] border border-[#262638] flex items-center justify-center p-0.5 shadow-md">
+              <div className="w-10 h-10 rounded-xl overflow-hidden bg-[#15151D] border border-[#262638] flex items-center justify-center p-0.5 shadow-md hover:border-[#38BDF8] transition-colors">
                 <img
-                  src="/TRY.jpg"
+                  src={`${import.meta.env.BASE_URL}TRY.jpg`}
                   alt="ZEROONE Emblem"
-                  width={36}
-                  height={36}
+                  width={40}
+                  height={40}
                   className="w-full h-full object-cover rounded-lg"
                   onError={(e) => {
                     (e.currentTarget as HTMLElement).style.display = 'none';
@@ -37,7 +37,13 @@ export const Footer = ({ onSelectGenre, onScrollToTop }: FooterProps) => {
               ZEROONE’s dedicated PlayStation games catalog. Discover high-caliber PS5 and PS4 adventures, filtered by genre with precision and style.
             </p>
 
-            <div className="flex items-center gap-2 text-xs text-[#71717A]">
+            <div className="flex items-center gap-3 text-xs text-[#71717A] pt-1">
+              <div className="flex items-center gap-1.5 text-xs font-black tracking-widest px-2.5 py-1 rounded-lg bg-[#15151D] border border-[#262638]">
+                <span className="text-[#22D3EE]">△</span>
+                <span className="text-[#F43F5E]">○</span>
+                <span className="text-[#38BDF8]">✕</span>
+                <span className="text-[#E879F9]">□</span>
+              </div>
               <span>PS5 Pro Ready</span>
               <span>•</span>
               <span>DualSense Wireless</span>

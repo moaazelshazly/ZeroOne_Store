@@ -7,6 +7,8 @@ import { GameGrid, type SortOption, type PlatformFilter } from './components/Gam
 import { GameDetailsModal } from './components/GameDetailsModal';
 import { ApiStatusBar, type CatalogSourceFilter } from './components/ApiStatusBar';
 import { Footer } from './components/Footer';
+import { FloatingPlayStationHud } from './components/FloatingPlayStationHud';
+import { InteractiveDraggableShapes } from './components/InteractiveDraggableShapes';
 import { GAMES, GENRES } from './data/games';
 import { fetchExternalGames, getCachedExternalGames, type ApiProvider } from './services/gameApi';
 import type { Genre, Game } from './types/game';
@@ -179,7 +181,10 @@ function StorePage({ scrollToCatalogOnMount = false }: { scrollToCatalogOnMount?
   }, [activeCatalog, selectedGenre, searchQuery, platformFilter]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#0B0B10] text-[#F4F4F5]">
+    <div className="min-h-screen flex flex-col bg-[#0B0B10] text-[#F4F4F5] relative">
+      {/* Interactive Draggable PlayStation Shapes (△ ○ ✕ □) - Drag & drop anywhere */}
+      <InteractiveDraggableShapes />
+
       {/* Navigation Bar */}
       <Navbar
         searchQuery={searchQuery}
@@ -267,6 +272,9 @@ function StorePage({ scrollToCatalogOnMount = false }: { scrollToCatalogOnMount?
         onSelectGenre={handleSelectGenre}
         onScrollToTop={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       />
+
+      {/* Floating Interactive PlayStation Quick Action HUD */}
+      <FloatingPlayStationHud />
     </div>
   );
 }

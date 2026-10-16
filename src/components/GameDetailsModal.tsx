@@ -210,8 +210,10 @@ export const GameDetailsModal = ({ game, onClose }: GameDetailsModalProps) => {
               </div>
 
               {/* Price & Primary WhatsApp Buy Action Box */}
-              <div className="p-5 rounded-2xl bg-[#1C1C27] border border-[#262638] space-y-4">
-                <div className="flex items-baseline justify-between">
+              <div className="p-6 rounded-2xl bg-gradient-to-b from-[#1C1C27] to-[#15151D] border border-[#262638] hover:border-[#38BDF8]/40 transition-colors space-y-4 shadow-xl relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 blur-2xl pointer-events-none" />
+
+                <div className="flex items-baseline justify-between relative z-10">
                   <div>
                     <span className="text-xs uppercase tracking-wider text-[#A1A1AA] font-semibold">
                       Store Price
@@ -221,24 +223,24 @@ export const GameDetailsModal = ({ game, onClose }: GameDetailsModalProps) => {
                     </div>
                   </div>
                   <div className="text-right">
-                    <span className="inline-flex items-center gap-1.5 text-xs text-emerald-400 font-semibold bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/20">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                    <span className="inline-flex items-center gap-1.5 text-xs text-emerald-400 font-semibold bg-emerald-500/15 px-3 py-1 rounded-full border border-emerald-500/30 shadow-sm">
+                      <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
                       In Stock for WhatsApp Order
                     </span>
                   </div>
                 </div>
 
-                {/* The WhatsApp Buy Button */}
+                {/* The WhatsApp Buy Button with Beam Sweep Animation */}
                 <button
                   type="button"
                   onClick={() => redirectToWhatsApp(game)}
-                  className="w-full py-4 px-6 rounded-xl font-extrabold text-sm sm:text-base text-white bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-500 hover:from-emerald-500 hover:to-teal-400 shadow-lg shadow-emerald-600/30 hover:shadow-emerald-600/50 transition-all duration-300 flex items-center justify-center gap-3 transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
+                  className="shine-sweep-container w-full py-4 px-6 rounded-xl font-black text-sm sm:text-base text-white bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-500 hover:from-emerald-500 hover:to-teal-400 shadow-xl shadow-emerald-600/30 hover:shadow-emerald-600/60 transition-all duration-300 flex items-center justify-center gap-3 transform hover:-translate-y-1 active:translate-y-0 cursor-pointer border border-emerald-400/40 relative z-10"
                 >
                   <MessageSquare className="w-5 h-5 fill-white" />
                   <span>Buy Game via WhatsApp</span>
                 </button>
 
-                <p className="text-[11px] text-center text-[#71717A]">
+                <p className="text-[11px] text-center text-[#71717A] relative z-10">
                   Clicking will open WhatsApp with your pre-filled game order details for instant assistance.
                 </p>
               </div>
@@ -263,9 +265,9 @@ export const GameDetailsModal = ({ game, onClose }: GameDetailsModalProps) => {
                   {featuresToDisplay.map((feat, idx) => (
                     <div
                       key={idx}
-                      className="flex items-center gap-2 p-2.5 rounded-xl bg-[#0B0B10] border border-[#262638] text-xs text-[#F4F4F5]"
+                      className="flex items-center gap-2.5 p-3 rounded-xl bg-[#0B0B10] border border-[#262638] text-xs text-[#F4F4F5] hover:border-[#38BDF8]/60 hover:bg-[#15151D] hover:scale-[1.02] transition-all duration-200 cursor-default group"
                     >
-                      <Zap className="w-3.5 h-3.5 text-[#38BDF8] shrink-0" />
+                      <Zap className="w-3.5 h-3.5 text-[#38BDF8] shrink-0 group-hover:scale-110 group-hover:text-[#22D3EE] transition-all" />
                       <span className="truncate">{feat}</span>
                     </div>
                   ))}
